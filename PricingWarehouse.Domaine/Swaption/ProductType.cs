@@ -1,4 +1,4 @@
-﻿namespace PricingWarehouse.Domaine.Swaptions
+﻿namespace PricingWarehouse.Domain.Swaption
 {
     public enum ProductType
     {

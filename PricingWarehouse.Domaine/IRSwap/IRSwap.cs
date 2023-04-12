@@ -1,4 +1,4 @@
-﻿using PricingWarehouse.Domaine.Swaptions;
+﻿using PricingWarehouse.Domain.Swaption;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
