@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PricingWarehouse.Domain.MarketData
+﻿namespace PricingWarehouse.Domain.MarketData
 {
     public interface IVolatilityPoint
     {
