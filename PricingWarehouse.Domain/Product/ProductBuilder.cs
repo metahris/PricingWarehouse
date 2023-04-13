@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace PricingWarehouse.Domain.Product
 {
-    public interface IProductBuilder
+    public interface IProductBuilder<T> where T : IProduct
     {
-        IProduct Build();
+        T Build();
     }
 }
