@@ -1,8 +1,8 @@
 ﻿using System.Text.Json;
+using System;
 
-namespace OptionPricer.Infrastructure
+namespace PricingWarehouse.Infrastructure
 {
-
     public interface IObjectSerializer
     {
         string Serialize<T>(T obj);
@@ -35,3 +35,4 @@ namespace OptionPricer.Infrastructure
         }
     }
 }
+
