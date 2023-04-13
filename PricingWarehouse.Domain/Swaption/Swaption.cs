@@ -1,4 +1,5 @@
-﻿using PricingWarehouse.Domain.Product;
+﻿using PricingWarehouse.Domain.IRSwap;
+using PricingWarehouse.Domain.Product;
 
 namespace PricingWarehouse.Domain.Swaption
 {
@@ -13,7 +14,7 @@ namespace PricingWarehouse.Domain.Swaption
         OptionPrice OptionPrice { get; }
         PricingModel PricingModel { get; }    
         int SwaptionId { get; } 
-        IRSwap UnderlyingSwap { get; }
+        IIRSwap UnderlyingSwap { get; }
         void SetSwaptionPrice(double price);
         void SetSwaptionId(int swaptionId);
         void SetOptionType(OptionType optionType);
@@ -29,11 +30,11 @@ namespace PricingWarehouse.Domain.Swaption
         public OptionPrice OptionPrice { get; private set; }
         public PricingModel PricingModel { get; private set; }
         public int SwaptionId { get; private set; }
-        public IRSwap UnderlyingSwap { get; private set; }
+        public IIRSwap UnderlyingSwap { get; private set; }
 
         public EuropeanSwaption(OptionType optionType, SettlementType settlementType, ValuationDate optionValuationDate,
             StartDate optionEffectiveDate, EndDate optionExpirationDate, OptionPrice optionPrice, PricingModel pricingModel,
-            IRSwap underlyingSwap)
+            IIRSwap underlyingSwap)
         {
             OptionType = optionType;
             SettlementType = settlementType;
