@@ -2,8 +2,8 @@
 {
     public class FloatingRateSpread
     {
-        public string Value;
-        public FloatingRateSpread(string value)
+        public double Value;
+        public FloatingRateSpread(double value)
         {
             Value = value;
         }
