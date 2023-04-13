@@ -2,21 +2,21 @@
 
 namespace PricingWarehouse.Domain.IRSwap
 {
-    public interface IIRSwapBuilder: IProductBuilder
+    public interface IIRSwapBuilder<T>: IProductBuilder<T> where T : IProduct
     {
         void AddFixedRate(double fixedRate);
         void AddFloatingRateReference(string floatingRateReference);
         void AddFloatingRateSpread(double floatingRateSpread);
-        void AddPSwapValue(double swapValue);
         void AddCurrency(string currency);
         void AddDayCountConvention(string dayCountConvention);
+        void AddPaymentFrequencyMonths(int paymentFrequencyMonths);
         void AddStartDate(DateTime startDate);
         void AddEndDate(DateTime endDate);
         void AddValuationDate(DateTime valuationDate);
         void AddNotional(double notional);
-        void AddOptionPrice(double optionPrice);
+        void AddSwapValue(double swapValue);
     }
-    public class IRSwapBuilder:IIRSwapBuilder
+    public class IRSwapBuilder:IIRSwapBuilder<IIRSwap> 
     {
         private FixedRate fixedRate;
         private FloatingRateReference floatingRateReference;
@@ -29,7 +29,6 @@ namespace PricingWarehouse.Domain.IRSwap
         private EndDate endDate;
         private Notional notional;
         private ValuationDate valuationDate;
-        private OptionPrice optionPrice;
 
 
         public void AddCurrency(string currency)
@@ -40,6 +39,10 @@ namespace PricingWarehouse.Domain.IRSwap
         public void AddDayCountConvention(string dayCountConvention)
         {
             this.dayCountConvention = new DayCountConvention(dayCountConvention);
+        }
+        public void AddPaymentFrequencyMonths(int paymentFrequencyMonths)
+        {
+            this.paymentFrequencyMonths = new PaymentFrequencyMonths(paymentFrequencyMonths);
         }
 
         public void AddEndDate(DateTime endDate)
@@ -67,12 +70,7 @@ namespace PricingWarehouse.Domain.IRSwap
             this.notional = new Notional(notional);
         }
 
-        public void AddOptionPrice(double optionPrice)
-        {
-            this.optionPrice = new OptionPrice(optionPrice);
-        }
-
-        public void AddPSwapValue(double swapValue)
+        public void AddSwapValue(double swapValue)
         {
             this.swapValue = new SwapValue(swapValue);
         }
@@ -86,11 +84,10 @@ namespace PricingWarehouse.Domain.IRSwap
         {
             this.valuationDate = new ValuationDate(valuationDate);
         }
-
-        public IProduct Build()
+        public IIRSwap Build()
         {
-            return new IRSwap(fixedRate,  floatingRateReference,  floatingRateSpread,paymentFrequencyMonths,  swapValue,  currency,  dayCountConvention,
-             startDate,  endDate,  notional,  valuationDate);
+            return new IRSwap(fixedRate, floatingRateReference, floatingRateSpread, paymentFrequencyMonths, swapValue, currency, dayCountConvention,
+             startDate, endDate, notional, valuationDate);
         }
     }
 }
