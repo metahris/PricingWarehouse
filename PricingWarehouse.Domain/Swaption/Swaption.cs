@@ -1,10 +1,8 @@
-﻿using PricingWarehouse.Domain;
-using PricingWarehouse.Domain.IRSwap;
-using PricingWarehouse.Domain.Swaption;
+﻿using PricingWarehouse.Domain.Product;
 
 namespace PricingWarehouse.Domain.Swaption
 {
-    public interface ISwaption
+    public interface ISwaption: IProduct
     {
         ProductType ProductType { get; }
         OptionType OptionType { get; }    

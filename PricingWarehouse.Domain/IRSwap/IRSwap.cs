@@ -1,14 +1,8 @@
-﻿using PricingWarehouse.Domain.Swaption;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PricingWarehouse.Domain.Product;
 
 namespace PricingWarehouse.Domain.IRSwap
 {
-    public interface IIRSwap
+    public interface IIRSwap:IProduct
     {
         FixedRate FixedRate { get; }
         FloatingRateReference FloatingRateReference { get; }
