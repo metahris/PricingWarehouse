@@ -3,6 +3,6 @@
     public enum SettlementType
     {
         Cash,
-        Pyhical
+        Physical
     }
 }
