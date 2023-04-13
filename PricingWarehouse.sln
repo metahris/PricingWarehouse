@@ -10,7 +10,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PricingWarehouse.Domain", "PricingWarehouse.Domain\PricingWarehouse.Domain.csproj", "{668420B0-6D25-404A-8460-ECE267A547DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PricingWarehouse.Domain", "PricingWarehouse.Domain\PricingWarehouse.Domain.csproj", "{668420B0-6D25-404A-8460-ECE267A547DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PricingWarehouse.Infrastructure", "PricingWarehouse.Infrastructure\PricingWarehouse.Infrastructure.csproj", "{01A115B5-95A3-4504-9BB0-ED897BBFC6E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,9 +28,16 @@ Global
 		{668420B0-6D25-404A-8460-ECE267A547DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{668420B0-6D25-404A-8460-ECE267A547DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{668420B0-6D25-404A-8460-ECE267A547DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01A115B5-95A3-4504-9BB0-ED897BBFC6E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01A115B5-95A3-4504-9BB0-ED897BBFC6E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01A115B5-95A3-4504-9BB0-ED897BBFC6E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01A115B5-95A3-4504-9BB0-ED897BBFC6E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{01A115B5-95A3-4504-9BB0-ED897BBFC6E4} = {5BA29F88-F556-4539-9C9A-3A65F1E4E5E6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {223B78CF-B407-4359-BEAD-EA830927EFCD}
