@@ -3,7 +3,7 @@ using PricingWarehouse.Domain.Product;
 
 namespace PricingWarehouse.Domain.Swaption
 {
-    public interface ISwaption: IProduct
+    public interface ISwaption: IOption
     {
         ProductType ProductType { get; }
         OptionType OptionType { get; }    

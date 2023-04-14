@@ -3,7 +3,7 @@ using PricingWarehouse.Domain.Product;
 
 namespace PricingWarehouse.Domain.Swaption
 {
-    public interface ISwaptionBuilder<T>: IProductBuilder<T> where T : IProduct
+    public interface ISwaptionBuilder<T>: IProductBuilder<T> where T : IOption
     {
         void AddOptionType(OptionType optionType);
         void AddSettlementType(SettlementType settlementType);
