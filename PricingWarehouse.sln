@@ -16,6 +16,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PricingWarehouse.Infrastruc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PricingWarehouse.DomainServices", "PricingWarehouse.DomainServices\PricingWarehouse.DomainServices.csproj", "{9BAE8069-EFD1-4CFD-9EF4-D067E4E9D987}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PricingWarehouse.Repository", "PricingWarehouse.Repository\PricingWarehouse.Repository.csproj", "{B633E3C6-B431-4C12-86B8-3C4BC8F4E483}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +40,10 @@ Global
 		{9BAE8069-EFD1-4CFD-9EF4-D067E4E9D987}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BAE8069-EFD1-4CFD-9EF4-D067E4E9D987}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BAE8069-EFD1-4CFD-9EF4-D067E4E9D987}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B633E3C6-B431-4C12-86B8-3C4BC8F4E483}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B633E3C6-B431-4C12-86B8-3C4BC8F4E483}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B633E3C6-B431-4C12-86B8-3C4BC8F4E483}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B633E3C6-B431-4C12-86B8-3C4BC8F4E483}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
