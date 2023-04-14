@@ -1,13 +1,13 @@
-﻿using OptionPricer.Infrastructure;
+﻿using PricingWarehouse.Infrastructure;
 
 namespace PricingWarehouse.Domain.MarketData
 {
     public interface IMarketData
     {
         string Serialize(IObjectSerializer objectSerializer);
-        MarketData Deserialize(string json, IObjectSerializer objectSerializer);
+        IMarketData Deserialize(string json, IObjectSerializer objectSerializer);
     }
-    public class MarketData
+    public class MarketData : IMarketData
     {
         public DateTime MarketDate { get; private set; }
         public DiscountCurve DiscountCurve { get; private set; }
@@ -27,7 +27,7 @@ namespace PricingWarehouse.Domain.MarketData
             return objectSerializer.Serialize(this);
         }
 
-        public static MarketData Deserialize(string json, IObjectSerializer objectSerializer)
+        public IMarketData Deserialize(string json, IObjectSerializer objectSerializer)
         {
             return objectSerializer.Deserialize<MarketData>(json);
         }
