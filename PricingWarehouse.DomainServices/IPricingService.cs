@@ -1,6 +1,4 @@
-﻿using Microsoft.VisualBasic.FileIO;
-using PricingWarehouse.Domain.Product;
-
+﻿using PricingWarehouse.Domain.Product;
 
 namespace PricingWarehouse.DomainServices
 {
