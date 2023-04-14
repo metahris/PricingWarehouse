@@ -6,7 +6,7 @@ namespace PricingWarehouse.DAO
     public interface IIRSwapDAO
     {
         int InsertIRSwap(IRSwapDTO swap);
-        IRSwapDTO GetSwaptionById(int swapId);
+        IRSwapDTO GetIRSwapById(int swapId);
     }
     public class IRSwapDAO:IIRSwapDAO
     {
@@ -15,7 +15,7 @@ namespace PricingWarehouse.DAO
         {
             _connectionString = connectionString;
         }
-        public IRSwapDTO GetSwaptionById(int swapId)
+        public IRSwapDTO GetIRSwapById(int swapId)
         {
             var swapDTO = new IRSwapDTO();
             using (var sqlConnection = new SqlConnection(_connectionString))
