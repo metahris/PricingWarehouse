@@ -4,15 +4,7 @@ using PricingWarehouse.Domain.IRSwap;
 
 namespace PricingWarehouse.Repository
 {
-    public interface IIRSwapRepository
-    {
-        int InsertIRSwap(IIRSwap irSwap);
-        IIRSwap GetIRSwapById(int irSwapId);
-
-    }
-
-
-    public class IRSwapRepository : IIRSwapRepository
+    public class IRSwapRepository : IProductRepository<IIRSwap>
     {
         private readonly IIRSwapDAO _irSwapDAO;
         private readonly IRSwapBuilder _irSwapBuilder;
@@ -21,8 +13,7 @@ namespace PricingWarehouse.Repository
             _irSwapDAO = irSwapDAO;
             _irSwapBuilder = irSwapBuilder;    
         }
-
-        public int InsertIRSwap(IIRSwap irSwap)
+        public int InsertProduct(IIRSwap irSwap)
         {
             var irSwapDTO = new IRSwapDTO
             {
@@ -38,12 +29,10 @@ namespace PricingWarehouse.Repository
                 EndDate = irSwap.EndDate.Value,
                 SwapValue = irSwap.SwapValue.Value,
             };
-
             return _irSwapDAO.InsertIRSwap(irSwapDTO);
-
         }
 
-        public IIRSwap GetIRSwapById(int irSwapId)
+        public IIRSwap GetProductById(int irSwapId)
         {
             var irSwapDTO = _irSwapDAO.GetIRSwapById(irSwapId);
             _irSwapBuilder.AddFixedRate(irSwapDTO.FixedRate);
@@ -60,7 +49,5 @@ namespace PricingWarehouse.Repository
             return _irSwapBuilder.Build();
 
         }
-
-
     }
 }
