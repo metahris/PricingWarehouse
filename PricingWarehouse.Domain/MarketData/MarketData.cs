@@ -1,6 +1,6 @@
 ﻿using PricingWarehouse.Infrastructure;
 
-namespace PricingWarehouse.Domain.MarketData
+namespace PricingWarehouse.Domain
 {
     public interface IMarketData
     {

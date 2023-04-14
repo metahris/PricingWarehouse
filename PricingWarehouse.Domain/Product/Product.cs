@@ -1,4 +1,4 @@
-﻿namespace PricingWarehouse.Domain.Product
+﻿namespace PricingWarehouse.Domain
 {
     public interface IProduct
     {

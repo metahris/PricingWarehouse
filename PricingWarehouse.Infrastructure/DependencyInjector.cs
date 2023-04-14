@@ -1,4 +1,5 @@
 ﻿using DryIoc;
+
 namespace PricingWarehouse.Infrastructure
 {
     public interface IDependencyInjector

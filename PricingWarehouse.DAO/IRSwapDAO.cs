@@ -1,21 +1,17 @@
-﻿using System.Data;
+﻿using PricingWarehouse.DTO;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace PricingWarehouse.DAO
 {
-    public interface IIRSwapDAO
-    {
-        int InsertIRSwap(IRSwapDTO swap);
-        IRSwapDTO GetIRSwapById(int swapId);
-    }
-    public class IRSwapDAO:IIRSwapDAO
+    public class IRSwapDAO:IProducDAO<IRSwapDTO>
     {
         private readonly string _connectionString;
         public IRSwapDAO(string connectionString)
         {
             _connectionString = connectionString;
         }
-        public IRSwapDTO GetIRSwapById(int swapId)
+        public IRSwapDTO GetProductById(int swapId)
         {
             var swapDTO = new IRSwapDTO();
             using (var sqlConnection = new SqlConnection(_connectionString))
@@ -55,7 +51,7 @@ namespace PricingWarehouse.DAO
             return swapDTO;
         }
         
-        public int InsertIRSwap(IRSwapDTO swap)
+        public int InsertProduct(IRSwapDTO swap)
         {
             var swapId = 0;
             using (var sqlConnection = new SqlConnection(_connectionString))

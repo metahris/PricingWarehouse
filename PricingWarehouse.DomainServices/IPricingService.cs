@@ -1,4 +1,4 @@
-﻿using PricingWarehouse.Domain.Product;
+﻿using PricingWarehouse.Domain;
 
 namespace PricingWarehouse.DomainServices
 {

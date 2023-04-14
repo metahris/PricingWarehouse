@@ -1,5 +1,4 @@
-﻿using PricingWarehouse.Domain.IRSwap;
-using PricingWarehouse.Domain.Product;
+﻿using PricingWarehouse.Domain;
 
 namespace PricingWarehouse.Repository
 {

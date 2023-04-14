@@ -10,4 +10,9 @@
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PricingWarehouse.Domain\PricingWarehouse.Domain.csproj" />
+    <ProjectReference Include="..\PricingWarehouse.DTO\PricingWarehouse.DTO.csproj" />
+  </ItemGroup>
+
 </Project>

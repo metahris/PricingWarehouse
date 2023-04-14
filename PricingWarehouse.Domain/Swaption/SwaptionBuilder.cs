@@ -1,21 +1,6 @@
-﻿using PricingWarehouse.Domain.IRSwap;
-using PricingWarehouse.Domain.Product;
-
-namespace PricingWarehouse.Domain.Swaption
+﻿namespace PricingWarehouse.Domain
 {
-    public interface ISwaptionBuilder<T>: IProductBuilder<T> where T : IOption
-    {
-        void AddOptionType(OptionType optionType);
-        void AddSettlementType(SettlementType settlementType);
-        void AddValuationDate(DateTime valuationDate);
-        void AddOptionEffectiveDate(DateTime optionEffectiveDate);
-        void AddOptionExpirationDate(DateTime optionExpirationDate);
-        void AddOptionPrice(double optionPrice);
-        void AddPricingModel(PricingModel pricingModel);
-        void AddUnderlyingSwap(double fixedRate, string floatingRateReference, double floatingRateSpread, int paymentFrequencyMonths, double swapValue, string currency,
-            string dayCountConvention, DateTime startDate, DateTime endDate, double notional, DateTime valuationDate, IRSwapBuilder irSwapBuilder);
-    }
-    public class EuropeanSwaptionBuilder:ISwaptionBuilder<ISwaption>
+    public class EuropeanSwaptionBuilder:IProductBuilder<ISwaption>
     {
         private OptionType optionType;
         private SettlementType settlementType;
@@ -24,7 +9,7 @@ namespace PricingWarehouse.Domain.Swaption
         private EndDate optionExpirationDate;
         private OptionPrice optionPrice;
         private PricingModel pricingModel;
-        private IIRSwap underlyingSwap;
+        private IRSwap underlyingSwap;
 
         public void AddOptionEffectiveDate(DateTime optionEffectiveDate)
         {

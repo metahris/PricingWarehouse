@@ -1,25 +1,6 @@
-﻿using PricingWarehouse.Domain.Product;
-
-namespace PricingWarehouse.Domain.IRSwap
+﻿namespace PricingWarehouse.Domain
 {
-    public interface IIRSwap:IProduct
-    {
-        FixedRate FixedRate { get; }
-        FloatingRateReference FloatingRateReference { get; }
-        FloatingRateSpread FloatingRateSpread { get; }
-        PaymentFrequencyMonths PaymentFrequencyMonths { get; }
-        SwapValue SwapValue { get; }
-        Currency Currency { get; }
-        DayCountConvention DayCountConvention { get; }
-        StartDate StartDate { get; }
-        EndDate EndDate { get; }
-        Notional Notional { get; }
-        ValuationDate ValuationDate { get; }
-        int SwapId { get; }
-        void SetSwapValue(int swapValue);
-        void SetSwapId(int swapId);
-    }
-    public class IRSwap:IIRSwap
+    public class IRSwap:IProduct
     {
         public FixedRate FixedRate { get; private set; }
         public FloatingRateReference FloatingRateReference { get; private set; }

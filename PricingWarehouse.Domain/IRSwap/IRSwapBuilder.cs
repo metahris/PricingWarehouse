@@ -1,22 +1,6 @@
-﻿using PricingWarehouse.Domain.Product;
-
-namespace PricingWarehouse.Domain.IRSwap
+﻿namespace PricingWarehouse.Domain
 {
-    public interface IIRSwapBuilder<T>: IProductBuilder<T> where T : IProduct
-    {
-        void AddFixedRate(double fixedRate);
-        void AddFloatingRateReference(string floatingRateReference);
-        void AddFloatingRateSpread(double floatingRateSpread);
-        void AddCurrency(string currency);
-        void AddDayCountConvention(string dayCountConvention);
-        void AddPaymentFrequencyMonths(int paymentFrequencyMonths);
-        void AddStartDate(DateTime startDate);
-        void AddEndDate(DateTime endDate);
-        void AddValuationDate(DateTime valuationDate);
-        void AddNotional(double notional);
-        void AddSwapValue(double swapValue);
-    }
-    public class IRSwapBuilder:IIRSwapBuilder<IIRSwap> 
+    public class IRSwapBuilder:IProductBuilder<IRSwap> 
     {
         private FixedRate fixedRate;
         private FloatingRateReference floatingRateReference;
@@ -84,7 +68,7 @@ namespace PricingWarehouse.Domain.IRSwap
         {
             this.valuationDate = new ValuationDate(valuationDate);
         }
-        public IIRSwap Build()
+        public IRSwap Build()
         {
             return new IRSwap(fixedRate, floatingRateReference, floatingRateSpread, paymentFrequencyMonths, swapValue, currency, dayCountConvention,
              startDate, endDate, notional, valuationDate);

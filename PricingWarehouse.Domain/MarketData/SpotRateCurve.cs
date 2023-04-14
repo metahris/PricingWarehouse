@@ -1,4 +1,4 @@
-﻿namespace PricingWarehouse.Domain.MarketData
+﻿namespace PricingWarehouse.Domain
 {
     public class SpotRateCurve
     {

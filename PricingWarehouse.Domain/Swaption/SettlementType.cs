@@ -1,4 +1,4 @@
-﻿namespace PricingWarehouse.Domain.Swaption
+﻿namespace PricingWarehouse.Domain
 {
     public enum SettlementType
     {

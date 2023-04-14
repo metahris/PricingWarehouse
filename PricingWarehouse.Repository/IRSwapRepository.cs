@@ -1,19 +1,19 @@
-﻿
-using PricingWarehouse.DAO;
-using PricingWarehouse.Domain.IRSwap;
+﻿using PricingWarehouse.DAO;
+using PricingWarehouse.Domain;
+using PricingWarehouse.DTO;
 
 namespace PricingWarehouse.Repository
 {
-    public class IRSwapRepository : IProductRepository<IIRSwap>
+    public class IRSwapRepository : IProductRepository<IRSwap>
     {
-        private readonly IIRSwapDAO _irSwapDAO;
+        private readonly IRSwapDAO _irSwapDAO;
         private readonly IRSwapBuilder _irSwapBuilder;
-        public IRSwapRepository(IIRSwapDAO irSwapDAO, IRSwapBuilder irSwapBuilder)
+        public IRSwapRepository(IRSwapDAO irSwapDAO, IRSwapBuilder irSwapBuilder)
         {
             _irSwapDAO = irSwapDAO;
             _irSwapBuilder = irSwapBuilder;    
         }
-        public int InsertProduct(IIRSwap irSwap)
+        public int InsertProduct(IRSwap irSwap)
         {
             var irSwapDTO = new IRSwapDTO
             {
@@ -29,12 +29,12 @@ namespace PricingWarehouse.Repository
                 EndDate = irSwap.EndDate.Value,
                 SwapValue = irSwap.SwapValue.Value,
             };
-            return _irSwapDAO.InsertIRSwap(irSwapDTO);
+            return _irSwapDAO.InsertProduct(irSwapDTO);
         }
 
-        public IIRSwap GetProductById(int irSwapId)
+        public IRSwap GetProductById(int irSwapId)
         {
-            var irSwapDTO = _irSwapDAO.GetIRSwapById(irSwapId);
+            var irSwapDTO = _irSwapDAO.GetProductById(irSwapId);
             _irSwapBuilder.AddFixedRate(irSwapDTO.FixedRate);
             _irSwapBuilder.AddFloatingRateReference(irSwapDTO.FloatingRateReference);
             _irSwapBuilder.AddFloatingRateSpread(irSwapDTO.FloatingRateSpread);

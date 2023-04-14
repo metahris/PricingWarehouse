@@ -1,4 +1,4 @@
-﻿namespace PricingWarehouse.Domain.IRSwap
+﻿namespace PricingWarehouse.Domain
 {
     public class PaymentFrequencyMonths
     {

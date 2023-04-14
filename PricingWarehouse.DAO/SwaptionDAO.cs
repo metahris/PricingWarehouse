@@ -1,14 +1,10 @@
-﻿using System.Data;
+﻿using PricingWarehouse.DTO;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace PricingWarehouse.DAO
 {
-    public interface ISwaptionDAO
-    {
-        int InsertSwaption(ISwaptionDTO swaption);
-        ISwaptionDTO GetSwaptionById(int swaptionId);
-    }
-    public class EuropeanSwaptionDAO:ISwaptionDAO
+    public class EuropeanSwaptionDAO:IProducDAO<ISwaptionDTO>
     {
         private readonly string _connectionString;
         public EuropeanSwaptionDAO(string connectionString)
@@ -16,7 +12,7 @@ namespace PricingWarehouse.DAO
             _connectionString = connectionString;
             }
 
-        public ISwaptionDTO GetSwaptionById(int swaptionId)
+        public ISwaptionDTO GetProductById(int swaptionId)
         {
             var swaptionDTO = new EuropeanSwaptionDTO();
             using (var sqlConnection = new SqlConnection(_connectionString))
@@ -61,7 +57,7 @@ namespace PricingWarehouse.DAO
             return swaptionDTO;
         }
 
-        public int InsertSwaption(ISwaptionDTO swaption)
+        public int InsertProduct(ISwaptionDTO swaption)
         {
             var swaptionId = 0;
             using (var sqlConnection = new SqlConnection(_connectionString))

@@ -1,6 +1,6 @@
-﻿namespace PricingWarehouse.DAO
+﻿namespace PricingWarehouse.DTO
 {
-    public interface ISwaptionDTO 
+    public interface ISwaptionDTO : IProductDTO
     {
         string ProductType { get; }
         string OptionType { get; set; }
@@ -37,7 +37,7 @@
         public double NotionalAmount { get; set; }
         public string PricingModel { get; set; }
         public int PaymentFrequencyMonths { get; set; }
-        public string DayCountConvention { get; set; }  
+        public string DayCountConvention { get; set; }
     }
 
     public class BermudeanSwaptionDTO : ISwaptionDTO
