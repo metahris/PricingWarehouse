@@ -4,33 +4,25 @@
     {
         ProductType ProductType { get; }
         OptionType OptionType { get; }    
-        SettlementType SettlementType { get; }
-        ValuationDate OptionValuationDate { get; }
-        StartDate OptionEffectiveDate { get; }
-        EndDate OptionExpirationDate { get; }
-        OptionPrice OptionPrice { get; }
-        PricingModel PricingModel { get; }    
-        int SwaptionId { get; }
+        SettlementType SettlementType { get; } 
         IRSwap UnderlyingSwap { get; }
-        void SetSwaptionPrice(double price);
-        void SetSwaptionId(int swaptionId);
-        void SetOptionType(OptionType optionType);
+        void SetSwaptionType(OptionType optionType);
     }
     public class EuropeanSwaption : ISwaption
     {
+        public int Id { get;private set; }
         public ProductType ProductType { get { return ProductType.EuropeanSwaption; } }
         public OptionType OptionType { get; private set; }
         public SettlementType SettlementType { get; private set; }
         public ValuationDate OptionValuationDate { get; private set; }
         public StartDate OptionEffectiveDate { get; private set; }
         public EndDate OptionExpirationDate { get; private set; }
-        public OptionPrice OptionPrice { get; private set; }
+        public Price Price { get; private set; }
         public PricingModel PricingModel { get; private set; }
-        public int SwaptionId { get; private set; }
         public IRSwap UnderlyingSwap { get; private set; }
 
         public EuropeanSwaption(OptionType optionType, SettlementType settlementType, ValuationDate optionValuationDate,
-            StartDate optionEffectiveDate, EndDate optionExpirationDate, OptionPrice optionPrice, PricingModel pricingModel,
+            StartDate optionEffectiveDate, EndDate optionExpirationDate, Price price, PricingModel pricingModel,
             IRSwap underlyingSwap)
         {
             OptionType = optionType;
@@ -38,12 +30,12 @@
             OptionValuationDate = optionValuationDate;
             OptionEffectiveDate = optionEffectiveDate;
             OptionExpirationDate = optionExpirationDate;
-            OptionPrice = optionPrice;
+            Price = price;
             PricingModel = pricingModel;
             UnderlyingSwap = underlyingSwap;
         }
 
-        public void SetOptionType(OptionType optionType)
+        public void SetSwaptionType(OptionType optionType)
         {
             OptionType = optionType;
         }
@@ -52,20 +44,20 @@
             SettlementType = settlementType;
         }
 
-        public void SetSwaptionId(int swaptionId)
+        public void SetId(int id)
         {
-            SwaptionId = swaptionId;
+            Id = id;
         }
 
-        public void SetSwaptionPrice(double price)
+        public void SetPrice(double price)
         {
-            if (OptionPrice == null)
+            if (Price == null)
             {
-                OptionPrice = new OptionPrice(price);
+                Price = new Price(price);
             }
             else
             {
-                OptionPrice.Value = price;
+                Price.Value = price;
             }
         }
         public override string ToString()

@@ -6,7 +6,7 @@
         private FloatingRateReference floatingRateReference;
         private FloatingRateSpread floatingRateSpread;
         private PaymentFrequencyMonths paymentFrequencyMonths;
-        private SwapValue swapValue;
+        private Price Price;
         private Currency currency;
         private DayCountConvention dayCountConvention;
         private StartDate startDate;
@@ -54,9 +54,9 @@
             this.notional = new Notional(notional);
         }
 
-        public void AddSwapValue(double swapValue)
+        public void AddPrice(double price)
         {
-            this.swapValue = new SwapValue(swapValue);
+            this.Price = new Price(price);
         }
 
         public void AddStartDate(DateTime startDate)
@@ -70,7 +70,7 @@
         }
         public IRSwap Build()
         {
-            return new IRSwap(fixedRate, floatingRateReference, floatingRateSpread, paymentFrequencyMonths, swapValue, currency, dayCountConvention,
+            return new IRSwap(fixedRate, floatingRateReference, floatingRateSpread, paymentFrequencyMonths, Price, currency, dayCountConvention,
              startDate, endDate, notional, valuationDate);
         }
     }

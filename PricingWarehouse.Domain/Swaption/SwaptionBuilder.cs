@@ -7,7 +7,7 @@
         private ValuationDate optionValuationDate;
         private StartDate optionEffectiveDate;
         private EndDate optionExpirationDate;
-        private OptionPrice optionPrice;
+        private Price price;
         private PricingModel pricingModel;
         private IRSwap underlyingSwap;
 
@@ -21,9 +21,9 @@
             this.optionExpirationDate = new EndDate(optionExpirationDate);
         }
 
-        public void AddOptionPrice(double optionPrice)
+        public void AddPrice(double price)
         {
-            this.optionPrice = new OptionPrice(optionPrice);
+            this.price = new Price(price);
         }
 
         public void AddOptionType(OptionType optionType)
@@ -44,7 +44,7 @@
         {
             this.optionValuationDate = new ValuationDate(valuationDate);
         }
-        public void AddUnderlyingSwap(double fixedRate, string floatingRateReference, double floatingRateSpread, int paymentFrequencyMonths, double swapValue, string currency,
+        public void AddUnderlyingSwap(double fixedRate, string floatingRateReference, double floatingRateSpread, int paymentFrequencyMonths, double price, string currency,
             string dayCountConvention, DateTime startDate, DateTime endDate, double notional, DateTime valuationDate, IRSwapBuilder irSwapBuilder)
         {
             irSwapBuilder.AddFixedRate(fixedRate);
@@ -57,7 +57,7 @@
             irSwapBuilder.AddNotional(notional);
             irSwapBuilder.AddFloatingRateSpread(floatingRateSpread);
             irSwapBuilder.AddPaymentFrequencyMonths(paymentFrequencyMonths);
-            irSwapBuilder.AddSwapValue(swapValue);
+            irSwapBuilder.AddPrice(price);
 
             this.underlyingSwap = irSwapBuilder.Build();
         }
@@ -65,7 +65,7 @@
         public ISwaption Build()
         {
             return new EuropeanSwaption(optionType, settlementType, optionValuationDate, optionEffectiveDate, optionExpirationDate,
-                optionPrice, pricingModel,underlyingSwap);
+                price, pricingModel,underlyingSwap);
         }
     }
 }

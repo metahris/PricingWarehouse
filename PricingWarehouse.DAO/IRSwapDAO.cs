@@ -36,7 +36,7 @@ namespace PricingWarehouse.DAO
                         swapDTO.ValuationDate = Convert.ToDateTime(reader["valuation_date"]);
                         swapDTO.StartDate = Convert.ToDateTime(reader["start_date"]);
                         swapDTO.EndDate = Convert.ToDateTime(reader["end_date"]);
-                        swapDTO.SwapValue = Convert.ToDouble(reader["swap_value"]);
+                        swapDTO.Price = Convert.ToDouble(reader["price"]);
                     }
                 }
                 catch (Exception ex)
@@ -70,7 +70,7 @@ namespace PricingWarehouse.DAO
                     sqlCommand.Parameters.AddWithValue("@valuation_date", SqlDbType.Date).Value = swap.ValuationDate;
                     sqlCommand.Parameters.AddWithValue("@start_date", SqlDbType.Date).Value = swap.StartDate;
                     sqlCommand.Parameters.AddWithValue("@end_date", SqlDbType.Date).Value = swap.EndDate;
-                    sqlCommand.Parameters.AddWithValue("@swap_value", SqlDbType.Float).Value = swap.SwapValue;
+                    sqlCommand.Parameters.AddWithValue("@price", SqlDbType.Float).Value = swap.Price;
 
                     var swapIdParam = sqlCommand.Parameters.Add("@swapId", SqlDbType.Int);
                     swapIdParam.Direction = ParameterDirection.Output;

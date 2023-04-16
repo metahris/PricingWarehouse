@@ -1,9 +1,9 @@
 ﻿namespace PricingWarehouse.Domain
 {
-    public class OptionPrice
+    public class Price
     {
         public double Value { get; set; }
-        public OptionPrice(double value)
+        public Price(double value)
         {
             if (Value < 0)
             {

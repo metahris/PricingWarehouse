@@ -6,23 +6,23 @@
         public FloatingRateReference FloatingRateReference { get; private set; }
         public FloatingRateSpread FloatingRateSpread { get; private set; }
         public PaymentFrequencyMonths PaymentFrequencyMonths { get; private set; }
-        public SwapValue SwapValue { get; private set; }
+        public Price Price { get; private set; }
         public Currency Currency { get; private set; }
         public DayCountConvention DayCountConvention { get; private set; }
         public StartDate StartDate { get; private set; }
         public EndDate EndDate { get; private set; }
         public Notional Notional { get; private set; }
         public ValuationDate ValuationDate { get; private set; }
-        public int SwapId { get; private set; } 
+        public int Id { get; private set; } 
         public IRSwap(FixedRate fixedRate, FloatingRateReference floatingRateReference, FloatingRateSpread floatingRateSpread,
-            PaymentFrequencyMonths paymentFrequencyMonths, SwapValue swapValue, Currency currency, DayCountConvention dayCountConvention,
+            PaymentFrequencyMonths paymentFrequencyMonths, Price price, Currency currency, DayCountConvention dayCountConvention,
             StartDate startDate, EndDate endDate, Notional notional, ValuationDate valuationDate)
         {
             FixedRate = fixedRate;
             FloatingRateReference = floatingRateReference;
             FloatingRateSpread = floatingRateSpread;
             PaymentFrequencyMonths = paymentFrequencyMonths;
-            SwapValue = swapValue;
+            Price = price;
             Currency = currency;
             DayCountConvention = dayCountConvention;
             StartDate = startDate;
@@ -31,20 +31,20 @@
             ValuationDate = valuationDate;
         }
 
-        public void SetSwapValue(int swapValue)
+        public void SetPrice(double price)
         {
-            if (swapValue == null)
+            if (price == null)
             {
-                SwapValue = new SwapValue(swapValue);
+                Price = new Price(price);
             }
             else
             {
-                SwapValue.Value = swapValue;
+                Price.Value = price;
             }
         }
-        public void SetSwapId(int swapId)
+        public void SetId(int id)
         {
-            SwapId = swapId;
+            Id = id;
         }
     }
 }

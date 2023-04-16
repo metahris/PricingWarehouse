@@ -7,5 +7,4 @@ namespace PricingWarehouse.Repository
         int InsertProduct(T product);
         T GetProductById(int productId);
     }
- 
 }

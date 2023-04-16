@@ -34,7 +34,7 @@ namespace PricingWarehouse.DAO
                         swaptionDTO.OptionValuationDate = Convert.ToDateTime(reader["option_valuation_date"]);
                         swaptionDTO.SwapStartDate = Convert.ToDateTime(reader["swap_start_date"]);
                         swaptionDTO.SwapEndDate = Convert.ToDateTime(reader["swap_end_date"]);
-                        swaptionDTO.OptionPrice = Convert.ToDouble(reader["option_price"]);
+                        swaptionDTO.Price = Convert.ToDouble(reader["price"]);
                         swaptionDTO.StrikeRate = Convert.ToDouble(reader["strike_rate"]);
                         swaptionDTO.FloatRateReference = reader["float_rate_reference"].ToString();
                         swaptionDTO.Currency = reader["currency"].ToString();
@@ -74,7 +74,7 @@ namespace PricingWarehouse.DAO
                     sqlCommand.Parameters.AddWithValue("@option_valuation_date", SqlDbType.Date).Value = swaption.OptionValuationDate;
                     sqlCommand.Parameters.AddWithValue("@swap_start_date", SqlDbType.Date).Value = swaption.SwapStartDate;
                     sqlCommand.Parameters.AddWithValue("@swap_end_date", SqlDbType.Date).Value = swaption.SwapEndDate;
-                    sqlCommand.Parameters.AddWithValue("@option_price", SqlDbType.Float).Value = swaption.OptionPrice;
+                    sqlCommand.Parameters.AddWithValue("@price", SqlDbType.Float).Value = swaption.Price;
                     sqlCommand.Parameters.AddWithValue("@strike_rate", SqlDbType.Float).Value = swaption.StrikeRate;
                     sqlCommand.Parameters.AddWithValue("@float_rate_reference", SqlDbType.NVarChar).Value = swaption.FloatRateReference;
                     sqlCommand.Parameters.AddWithValue("@currency", SqlDbType.NVarChar).Value = swaption.Currency;

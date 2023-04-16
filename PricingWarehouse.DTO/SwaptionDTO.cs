@@ -10,7 +10,6 @@
         DateTime OptionValuationDate { get; set; }
         DateTime SwapStartDate { get; set; }
         DateTime SwapEndDate { get; set; }
-        double OptionPrice { get; set; }
         double StrikeRate { get; set; }
         string FloatRateReference { get; set; }
         string Currency { get; set; }
@@ -30,7 +29,7 @@
         public DateTime OptionValuationDate { get; set; }
         public DateTime SwapStartDate { get; set; }
         public DateTime SwapEndDate { get; set; }
-        public double OptionPrice { get; set; }
+        public double Price { get; set; }
         public double StrikeRate { get; set; }
         public string FloatRateReference { get; set; }
         public string Currency { get; set; }
@@ -50,7 +49,7 @@
         public DateTime OptionValuationDate { get; set; }
         public DateTime SwapStartDate { get; set; }
         public DateTime SwapEndDate { get; set; }
-        public double OptionPrice { get; set; }
+        public double Price { get; set; }
         public double StrikeRate { get; set; }
         public string FloatRateReference { get; set; }
         public string Currency { get; set; }

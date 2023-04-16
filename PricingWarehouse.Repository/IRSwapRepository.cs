@@ -27,7 +27,7 @@ namespace PricingWarehouse.Repository
                 ValuationDate = irSwap.ValuationDate.Value,
                 StartDate = irSwap.StartDate.Value,
                 EndDate = irSwap.EndDate.Value,
-                SwapValue = irSwap.SwapValue.Value,
+                Price = irSwap.Price.Value,
             };
             return _irSwapDAO.InsertProduct(irSwapDTO);
         }
@@ -45,7 +45,7 @@ namespace PricingWarehouse.Repository
             _irSwapBuilder.AddEndDate(irSwapDTO.EndDate);
             _irSwapBuilder.AddValuationDate(irSwapDTO.ValuationDate);
             _irSwapBuilder.AddNotional(irSwapDTO.Notional);
-            _irSwapBuilder.AddSwapValue(irSwapDTO.SwapValue);
+            _irSwapBuilder.AddPrice(irSwapDTO.Price);
             return _irSwapBuilder.Build();
 
         }
