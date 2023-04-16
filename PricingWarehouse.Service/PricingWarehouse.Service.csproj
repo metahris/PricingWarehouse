@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PricingWarehouse.DomainServices\PricingWarehouse.DomainServices.csproj" />
+    <ProjectReference Include="..\PricingWarehouse.Domain\PricingWarehouse.Domain.csproj" />
+    <ProjectReference Include="..\PricingWarehouse.Repository\PricingWarehouse.Repository.csproj" />
+  </ItemGroup>
+
+</Project>
