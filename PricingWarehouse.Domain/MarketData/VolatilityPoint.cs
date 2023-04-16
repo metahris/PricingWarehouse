@@ -18,7 +18,6 @@
             Tenor = tenor;
             Strike = strike;
             Value = value;
-
         }
     }
     public class VolatilitySurfacePoint:IVolatilityPoint

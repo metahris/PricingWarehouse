@@ -7,6 +7,6 @@
         DateTime CurveDate { get;}
         string InterpolationType { get;}
         string ExtrapolationType { get;}
-        List<CurveNode> Nodes { get;}
+        IList<CurveNode> Nodes { get;}
     }
 }
