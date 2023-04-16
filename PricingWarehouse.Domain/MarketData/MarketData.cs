@@ -1,11 +1,12 @@
-﻿using PricingWarehouse.Infrastructure;
-
-namespace PricingWarehouse.Domain
+﻿namespace PricingWarehouse.Domain
 {
     public interface IMarketData
     {
-        string Serialize(IObjectSerializer objectSerializer);
-        IMarketData Deserialize(string json, IObjectSerializer objectSerializer);
+        DateTime MarketDate { get;}
+        DiscountCurve DiscountCurve { get;}
+        ForwardRateCurve ForwardRatesCurve { get;}
+        SpotRateCurve SpotRateCurve { get;}
+        IList<IVolatilityPoint> Volatilities { get;}
     }
     public class MarketData : IMarketData
     {
@@ -13,23 +14,14 @@ namespace PricingWarehouse.Domain
         public DiscountCurve DiscountCurve { get; private set; }
         public ForwardRateCurve ForwardRatesCurve { get; private set; }
         public SpotRateCurve SpotRateCurve { get; private set; }
-        public List<IVolatilityPoint> Volatilities { get; private set; }
-        public MarketData(DateTime marketDate, ForwardRateCurve forwardRatesCurve, DiscountCurve discountCurve, SpotRateCurve spotRateCurve, List<IVolatilityPoint> volatilities)
+        public IList<IVolatilityPoint> Volatilities { get; private set; }
+        public MarketData(DateTime marketDate, DiscountCurve discountCurve, ForwardRateCurve forwardRatesCurve, SpotRateCurve spotRateCurve, IList<IVolatilityPoint> volatilities)
         {
             MarketDate = marketDate;
-            ForwardRatesCurve = forwardRatesCurve;
             DiscountCurve = discountCurve;
+            ForwardRatesCurve = forwardRatesCurve;
             SpotRateCurve = spotRateCurve;
             Volatilities = volatilities;
-        }
-        public string Serialize(IObjectSerializer objectSerializer)
-        {
-            return objectSerializer.Serialize(this);
-        }
-
-        public IMarketData Deserialize(string json, IObjectSerializer objectSerializer)
-        {
-            return objectSerializer.Deserialize<MarketData>(json);
         }
     }
 }
