@@ -2,9 +2,9 @@
 
 namespace PricingWarehouse.DomainServices
 {
-    public interface IPricingService
+    public interface IPricingService<T> where T : IProduct
     {
-        double Price(IProduct product);
+        double Price(T product, IMarketData marketData);
 
     }
 }
