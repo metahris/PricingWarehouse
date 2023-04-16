@@ -1,12 +1,10 @@
-﻿using PricingWarehouse.Domain.Product;
-
-using PricingWarehouse.Domain;
+﻿using PricingWarehouse.Domain;
 
 namespace PricingWarehouse.DomainServices
 {
-    public class SabrPricingService : IPricingService
+    public class SabrPricingService : IPricingService<IOption>
     {
-        public double Price(IProduct product)
+        public double Price(IOption option, IMarketData marketData)
         {
             throw new NotImplementedException();
         }

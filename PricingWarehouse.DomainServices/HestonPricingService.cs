@@ -2,9 +2,9 @@
 
 namespace PricingWarehouse.DomainServices
 {
-    public class HestonPricingService : IPricingService
+    public class HestonPricingService : IPricingService<IOption>
     {
-        public double Price(IProduct product)
+        public double Price(IOption option, IMarketData marketData)
         {
             throw new NotImplementedException();
         }
