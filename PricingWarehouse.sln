@@ -14,11 +14,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PricingWarehouse.Domain", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PricingWarehouse.Infrastructure", "PricingWarehouse.Infrastructure\PricingWarehouse.Infrastructure.csproj", "{A5A69024-124C-49BE-B1CC-160E22A003BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PricingWarehouse.DomainServices", "PricingWarehouse.DomainServices\PricingWarehouse.DomainServices.csproj", "{9BAE8069-EFD1-4CFD-9EF4-D067E4E9D987}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PricingWarehouse.DomainServices", "PricingWarehouse.DomainServices\PricingWarehouse.DomainServices.csproj", "{9BAE8069-EFD1-4CFD-9EF4-D067E4E9D987}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PricingWarehouse.Repository", "PricingWarehouse.Repository\PricingWarehouse.Repository.csproj", "{B633E3C6-B431-4C12-86B8-3C4BC8F4E483}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PricingWarehouse.Repository", "PricingWarehouse.Repository\PricingWarehouse.Repository.csproj", "{B633E3C6-B431-4C12-86B8-3C4BC8F4E483}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PricingWarehouse.DTO", "PricingWarehouse.DTO\PricingWarehouse.DTO.csproj", "{DDABCEA4-F623-4F26-AB02-619035483E8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PricingWarehouse.DTO", "PricingWarehouse.DTO\PricingWarehouse.DTO.csproj", "{DDABCEA4-F623-4F26-AB02-619035483E8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PricingWarehouse.Service", "PricingWarehouse.Service\PricingWarehouse.Service.csproj", "{44F1935B-ADC1-4E87-BA52-EDDFC8D53CBB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,6 +52,10 @@ Global
 		{DDABCEA4-F623-4F26-AB02-619035483E8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDABCEA4-F623-4F26-AB02-619035483E8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDABCEA4-F623-4F26-AB02-619035483E8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44F1935B-ADC1-4E87-BA52-EDDFC8D53CBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44F1935B-ADC1-4E87-BA52-EDDFC8D53CBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44F1935B-ADC1-4E87-BA52-EDDFC8D53CBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44F1935B-ADC1-4E87-BA52-EDDFC8D53CBB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
