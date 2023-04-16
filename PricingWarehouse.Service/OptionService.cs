@@ -21,13 +21,16 @@ namespace PricingWarehouse.Service
         {
             var marketData = priceable.MarketData;
             var pricingResults = new List<IOption>();
-            foreach (var option in priceable.Products)
+            Parallel.ForEach(priceable.Products, option =>
             {
                 var pricingService = dependencyInjector.Resolve<IPricingService<IProduct>>(option.PricingModel.ToString());
                 double price = pricingService.Price(option, marketData);
                 option.SetPrice(price);
-                pricingResults.Add(option);
-            }         
+                lock (pricingResults) // lock to safely add pricing results to the list
+                {
+                    pricingResults.Add(option);
+                }
+            });
             return pricingResults;
         }
     }
