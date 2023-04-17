@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NetMQ" Version="4.0.1.11" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PricingWarehouse.Domain\PricingWarehouse.Domain.csproj" />
+    <ProjectReference Include="..\PricingWarehouse.Infrastructure\PricingWarehouse.Infrastructure.csproj" />
+    <ProjectReference Include="..\PricingWarehouse.Repository\PricingWarehouse.Repository.csproj" />
+    <ProjectReference Include="..\PricingWarehouse.Service\PricingWarehouse.Service.csproj" />
+  </ItemGroup>
+
+</Project>
