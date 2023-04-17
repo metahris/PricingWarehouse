@@ -11,7 +11,8 @@
         DateTime SwapStartDate { get; set; }
         DateTime SwapEndDate { get; set; }
         double StrikeRate { get; set; }
-        string FloatRateReference { get; set; }
+        string FloatingRateReference { get; set; }
+        double FloatingRateSpread { get; set; }
         string Currency { get; set; }
         double NotionalAmount { get; set; }
         string PricingModel { get; set; }
@@ -31,7 +32,8 @@
         public DateTime SwapEndDate { get; set; }
         public double Price { get; set; }
         public double StrikeRate { get; set; }
-        public string FloatRateReference { get; set; }
+        public string FloatingRateReference { get; set; }
+        public double FloatingRateSpread { get; set; }
         public string Currency { get; set; }
         public double NotionalAmount { get; set; }
         public string PricingModel { get; set; }
@@ -51,7 +53,8 @@
         public DateTime SwapEndDate { get; set; }
         public double Price { get; set; }
         public double StrikeRate { get; set; }
-        public string FloatRateReference { get; set; }
+        public string FloatingRateReference { get; set; }
+        public double FloatingRateSpread { get; set; } 
         public string Currency { get; set; }
         public double NotionalAmount { get; set; }
         public string PricingModel { get; set; }

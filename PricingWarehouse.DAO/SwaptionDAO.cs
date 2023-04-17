@@ -36,7 +36,8 @@ namespace PricingWarehouse.DAO
                         swaptionDTO.SwapEndDate = Convert.ToDateTime(reader["swap_end_date"]);
                         swaptionDTO.Price = Convert.ToDouble(reader["price"]);
                         swaptionDTO.StrikeRate = Convert.ToDouble(reader["strike_rate"]);
-                        swaptionDTO.FloatRateReference = reader["float_rate_reference"].ToString();
+                        swaptionDTO.FloatingRateReference = reader["floating_rate_reference"].ToString();
+                        swaptionDTO.FloatingRateSpread = Convert.ToDouble(reader["floating_rate_reference"]);
                         swaptionDTO.Currency = reader["currency"].ToString();
                         swaptionDTO.NotionalAmount = Convert.ToDouble(reader["notional_amount"]);
                         swaptionDTO.PricingModel = reader["pricing_model"].ToString();
@@ -76,7 +77,8 @@ namespace PricingWarehouse.DAO
                     sqlCommand.Parameters.AddWithValue("@swap_end_date", SqlDbType.Date).Value = swaption.SwapEndDate;
                     sqlCommand.Parameters.AddWithValue("@price", SqlDbType.Float).Value = swaption.Price;
                     sqlCommand.Parameters.AddWithValue("@strike_rate", SqlDbType.Float).Value = swaption.StrikeRate;
-                    sqlCommand.Parameters.AddWithValue("@float_rate_reference", SqlDbType.NVarChar).Value = swaption.FloatRateReference;
+                    sqlCommand.Parameters.AddWithValue("@floating_rate_reference", SqlDbType.NVarChar).Value = swaption.FloatingRateReference;
+                    sqlCommand.Parameters.AddWithValue("@floating_rate_spread", SqlDbType.NVarChar).Value = swaption.FloatingRateSpread;
                     sqlCommand.Parameters.AddWithValue("@currency", SqlDbType.NVarChar).Value = swaption.Currency;
                     sqlCommand.Parameters.AddWithValue("@notional_amount", SqlDbType.Float).Value = swaption.NotionalAmount;
                     sqlCommand.Parameters.AddWithValue("@pricing_model", SqlDbType.NVarChar).Value = swaption.PricingModel;
