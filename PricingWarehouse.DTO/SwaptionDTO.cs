@@ -18,6 +18,9 @@
         string PricingModel { get; set; }
         int PaymentFrequencyMonths { get; set; }
         string DayCountConvention { get; set; }
+        double Delta { get; set; }
+        double Gamma { get; set; }
+        double Vega { get; set; }
     }
 
     public class EuropeanSwaptionDTO : ISwaptionDTO
@@ -39,6 +42,9 @@
         public string PricingModel { get; set; }
         public int PaymentFrequencyMonths { get; set; }
         public string DayCountConvention { get; set; }
+        public double Delta { get; set; }
+        public double Gamma { get; set; }
+        public double Vega { get; set; }
     }
 
     public class BermudeanSwaptionDTO : ISwaptionDTO
@@ -60,5 +66,8 @@
         public string PricingModel { get; set; }
         public int PaymentFrequencyMonths { get; set; }
         public string DayCountConvention { get; set; }
+        public double Delta { get; set; }
+        public double Gamma { get; set; }
+        public double Vega { get; set; }
     }
 }

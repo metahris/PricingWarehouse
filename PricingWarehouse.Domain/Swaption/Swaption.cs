@@ -21,9 +21,13 @@
         public PricingModel PricingModel { get; private set; }
         public IRSwap UnderlyingSwap { get; private set; }
 
+        public Delta Delta { get; private set; }
+        public Gamma Gamma { get; private set; }
+        public Vega Vega { get; private set; }
+
         public EuropeanSwaption(OptionType optionType, SettlementType settlementType, ValuationDate optionValuationDate,
             StartDate optionEffectiveDate, EndDate optionExpirationDate, Price price, PricingModel pricingModel,
-            IRSwap underlyingSwap)
+            IRSwap underlyingSwap, Delta delta, Gamma gamma, Vega vega)
         {
             OptionType = optionType;
             SettlementType = settlementType;
@@ -33,6 +37,9 @@
             Price = price;
             PricingModel = pricingModel;
             UnderlyingSwap = underlyingSwap;
+            Delta = delta;   
+            Gamma = gamma;
+            Vega = vega;
         }
 
         public void SetSwaptionType(OptionType optionType)

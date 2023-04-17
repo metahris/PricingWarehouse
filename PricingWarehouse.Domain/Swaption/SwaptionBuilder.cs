@@ -11,6 +11,10 @@
         private PricingModel pricingModel;
         private IRSwap underlyingSwap;
 
+        private Delta delta;
+        private Gamma gamma;
+        private Vega vega;
+
         public void AddOptionEffectiveDate(DateTime optionEffectiveDate)
         {
             this.optionEffectiveDate = new StartDate(optionEffectiveDate);
@@ -62,10 +66,28 @@
             this.underlyingSwap = irSwapBuilder.Build();
         }
 
+        public void AddDelta(double delta)
+        {
+            if (delta < 0 || delta > 1)
+            {
+                throw new ArgumentOutOfRangeException("delta must be between 0 and 1");
+            }
+            this.vega = new Vega(delta);
+        }
+        public void AddGamma(double gamma)
+        {
+            this.gamma = new Gamma(gamma);
+        }
+
+        public void AddVega(double vega)
+        {
+            this.vega = new Vega(vega);
+        }
+
         public EuropeanSwaption Build()
         {
             return new EuropeanSwaption(optionType, settlementType, optionValuationDate, optionEffectiveDate, optionExpirationDate,
-                price, pricingModel,underlyingSwap);
+                price, pricingModel,underlyingSwap, delta, gamma, vega);
         }
     }
 }
