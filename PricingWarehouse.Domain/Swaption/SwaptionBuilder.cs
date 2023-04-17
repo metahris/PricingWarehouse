@@ -1,6 +1,6 @@
 ﻿namespace PricingWarehouse.Domain
 {
-    public class EuropeanSwaptionBuilder:IProductBuilder<ISwaption>
+    public class EuropeanSwaptionBuilder:IProductBuilder<EuropeanSwaption>
     {
         private OptionType optionType;
         private SettlementType settlementType;
@@ -62,7 +62,7 @@
             this.underlyingSwap = irSwapBuilder.Build();
         }
 
-        public ISwaption Build()
+        public EuropeanSwaption Build()
         {
             return new EuropeanSwaption(optionType, settlementType, optionValuationDate, optionEffectiveDate, optionExpirationDate,
                 price, pricingModel,underlyingSwap);
