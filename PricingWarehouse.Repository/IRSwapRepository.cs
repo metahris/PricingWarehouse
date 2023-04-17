@@ -47,7 +47,6 @@ namespace PricingWarehouse.Repository
             _irSwapBuilder.AddNotional(irSwapDTO.Notional);
             _irSwapBuilder.AddPrice(irSwapDTO.Price);
             return _irSwapBuilder.Build();
-
         }
     }
 }
