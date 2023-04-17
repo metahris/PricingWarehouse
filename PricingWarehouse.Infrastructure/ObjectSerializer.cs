@@ -32,6 +32,11 @@ namespace PricingWarehouse.Infrastructure
                 throw new Exception($"Failed to deserialize object of type {typeof(T).FullName}", exc);
             }
         }
+        public T Clone<T>(T source)
+        {
+            var serialized = Serialize(source);
+            return Deserialize<T>(serialized);
+        }
     }
 }
 
