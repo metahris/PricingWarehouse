@@ -31,9 +31,13 @@ namespace PricingWarehouse.Repository
                 FloatingRateReference = europeanSwaption.UnderlyingSwap.FloatingRateReference.Value,
                 Currency = europeanSwaption.UnderlyingSwap.Currency.Value,
                 NotionalAmount = europeanSwaption.UnderlyingSwap.Notional.Value,
-                PricingModel = europeanSwaption.PricingModel.ToString(), 
+                PricingModel = europeanSwaption.PricingModel.ToString(),
                 PaymentFrequencyMonths = europeanSwaption.UnderlyingSwap.PaymentFrequencyMonths.Value,
-                DayCountConvention = europeanSwaption.UnderlyingSwap.DayCountConvention.Value
+                DayCountConvention = europeanSwaption.UnderlyingSwap.DayCountConvention.Value,
+                Delta = europeanSwaption.Delta.Value,
+                Gamma = europeanSwaption.Gamma.Value,
+                Vega = europeanSwaption.Vega.Value,
+
             };
             return _europeanSwaptionDAO.InsertProduct(europeanSwaptionDTO);
         }
@@ -64,6 +68,9 @@ namespace PricingWarehouse.Repository
             _europeanSwaptionBuilder.AddPrice(europeanSwaptionDTO.Price);
             _europeanSwaptionBuilder.AddPricingModel((PricingModel)Enum.Parse(typeof(PricingModel), europeanSwaptionDTO.PricingModel, true));
 
+            _europeanSwaptionBuilder.AddDelta(europeanSwaptionDTO.Delta);
+            _europeanSwaptionBuilder.AddGamma(europeanSwaptionDTO.Gamma);
+            _europeanSwaptionBuilder.AddVega(europeanSwaptionDTO.Vega);
             return _europeanSwaptionBuilder.Build();
         }
     }
