@@ -6,6 +6,7 @@ namespace PricingWarehouse.Infrastructure
     {
         string Serialize<T>(T obj);
         T Deserialize<T>(string obj);
+        T Clone<T>(T source);
     }
     public class ObjectSerializer : IObjectSerializer
     {
