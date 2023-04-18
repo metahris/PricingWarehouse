@@ -1,4 +1,6 @@
-﻿namespace PricingWarehouse.Domain
+﻿using DryIoc;
+
+namespace PricingWarehouse.Domain
 {
     public interface ISwaption: IOption
     {
@@ -67,9 +69,51 @@
                 Price.Value = price;
             }
         }
+        public void SetUnderlyingPrice(double price)
+        {
+            UnderlyingSwap.SetPrice(price);
+        }
+        public double GetUnderlyingPrice()
+        {
+            return UnderlyingSwap.Price.Value;
+        }
         public override string ToString()
         {
             return $"{ProductType}";
+        }
+        public void SetDelta(double delta)
+        {
+            if (Delta == null)
+            {
+                Delta = new Delta(delta);
+            }
+            else
+            {
+                Delta.Value = delta;
+            }
+        }
+
+        public void SetGamma(double gamma)
+        {
+            if (Gamma == null)
+            {
+                Gamma = new Gamma(gamma);
+            }
+            else
+            {
+                Gamma.Value = gamma;
+            }
+        }
+        public void SetVega(double vega)
+        {
+            if (Vega == null)
+            {
+                Vega = new Vega(vega);
+            }
+            else
+            {
+                Vega.Value = vega;
+            }
         }
     }
 }

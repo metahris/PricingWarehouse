@@ -9,5 +9,10 @@
         Delta Delta { get; }
         Gamma Gamma { get; }
         Vega Vega { get; }
+        void SetUnderlyingPrice(double price);
+        double GetUnderlyingPrice();
+        void SetDelta(double delta);
+        void SetGamma(double gamma);
+        void SetVega(double vega);
     }
 }
