@@ -33,7 +33,7 @@
 
         public void SetPrice(double price)
         {
-            if (price == null)
+            if (Price == null)
             {
                 Price = new Price(price);
             }
